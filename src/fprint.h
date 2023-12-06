@@ -46,30 +46,6 @@ void append(char ** dest, const char * src) {
     strcat(*dest, src);
 }
 
-char * fsprintf(const char * format_spec, ...) {
-    char * buf = malloc(1024);
-    va_list valist;
-    va_start(valist, format_spec);
-    vsprintf(buf, format_spec, valist);
-    va_end(valist);
-    return buf;
-}
-
-char * format_single_char(char format_spec, void * val) {
-    char * out = malloc(2048); // Increased the size for safety
-    switch (format_spec) {
-        case 's':
-            sprintf(out, "%s", (char *)val);
-            break;
-        case 'i':
-            sprintf(out, "%lld", (long long int)val);
-            break;
-        case 'f':
-            sprintf(out, "%lf", *(double*)val);
-            break;
-    }
-    return out;
-}
 
 void popCharsNeg(char *str, int n) {
     int len = strlen(str);
