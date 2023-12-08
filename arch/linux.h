@@ -17,26 +17,18 @@ char * trim_zeroes(char * str) {
     } 
 }
 
-char * f2c(float f) {
-    size_t size = (unsigned int)(f * 10);
-    char * buf = malloc(size);
-    snprintf(buf, size, "%f", f);
+// char * f2c(float f) {
+//     size_t size = (unsigned int)(f * 10);
+//     char * buf = malloc(size);
+//     snprintf(buf, size, "%f", f);
+//     return (buf);
+// }
 
-    return (buf);
-}
+// char * d2c(int d) {
+//     size_t size = (unsigned int)(d * 10);
+//     char * buf = malloc(size);
+//     snprintf(buf, size, "%d", d);
 
-char * d2c(int d) {
-    size_t size = (unsigned int)(d * 10);
-    char * buf = malloc(size);
-    snprintf(buf, size, "%d", d);
+//     return (buf);
+// }
 
-    return (buf);
-}
-
-char * c2c(char c) {
-    size_t size = (unsigned int)(c * 10);
-    char * buf = malloc(size);
-    snprintf(buf, size, "%c", c);
-
-    return (buf);
-}

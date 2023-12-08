@@ -9,6 +9,8 @@
 #error "Unknown arch"
 #endif
 
+#include "conversions.h"
+
 
 #define TYPE_ID(var) _Generic((var), \
     int: "int", \
@@ -79,7 +81,7 @@ char * fmt(char * format, ...) {
             format++;
             switch (*format) {
                 case 'f':
-                    append(&out, f2c(va_arg(vals, double)));
+                    append(&out, f2s(va_arg(vals, double)));
                     break;
                 case 'i':
                     append(&out, d2c(va_arg(vals, long long int)));
